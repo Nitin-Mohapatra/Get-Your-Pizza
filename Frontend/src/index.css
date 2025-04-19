@@ -1,0 +1,22 @@
+
+/* custom fonts */
+@font-face {
+  font-family: ketchup;
+  src: url('../public/fonts/ketchup.ttf') format('truetype');
+  font-weight: bold; /* Adjust if needed */
+  font-style: normal;  /* Adjust if needed */
+}
+.navbar-brand{
+  font-family: ketchup;
+}
+.nav-item{
+  font-family: ketchup;
+}
+.navbar{
+  position: absolute;
+  z-index: 10000;
+}
+
+.apply-font{
+  font-family: ketchup;
+}

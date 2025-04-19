@@ -1,0 +1,22 @@
+✅ React is mainly used to create Single Page Applications (SPAs).
+✅ If you want multiple "pages" inside App.jsx without reloading the page, you use react-router-dom.
+✅ React Router allows dynamic URL changes while keeping the app a SPA.
+
+How react-router-dom Works in a SPA
+Without react-router-dom
+
+React loads everything in a single component (like App.jsx).
+
+Clicking a link just changes the UI without changing the URL.
+
+The user feels stuck on one page.
+
+With react-router-dom
+
+The app still stays a SPA (no full-page reload).
+
+URLs update dynamically (e.g., /home, /about).
+
+Different components load based on the URL path.
+
+The browser's Back & Forward buttons work correctly.
