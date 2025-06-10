@@ -27,7 +27,7 @@ const connectDb = () => {
         // insertCat()
     })
 }
-
+// connectDb()
 
 module.exports = connectDb
 

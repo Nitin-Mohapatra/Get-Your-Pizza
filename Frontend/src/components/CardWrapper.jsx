@@ -6,15 +6,24 @@ import CardContent from '@mui/joy/CardContent';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
+import { useState } from 'react';
+import BasicModal from './BasicModal';
+import { useCart, useDispatch } from './CartProvider';
 
-export default function CardWrapper() {
+export default function CardWrapper({ foodData }) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const cart = useCart();
+  const dispatch = useDispatch();
+
   return (
     <Card sx={{ width: 320 }}>
       <div>
-        <Typography level="title-lg">Yosemite National Park</Typography>
-        <Typography level="body-sm">April 24 to May 02, 2021</Typography>
+        <Typography level="title-lg">{foodData.name}</Typography>
+        <Typography level="body-sm">{foodData.description}</Typography>
         <IconButton
-          aria-label="bookmark Bahamas Islands"
+          aria-label="bookmark"
           variant="plain"
           color="neutral"
           size="sm"
@@ -25,27 +34,31 @@ export default function CardWrapper() {
       </div>
       <AspectRatio minHeight="120px" maxHeight="200px">
         <img
-          src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286"
-          srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"
+          src={foodData.image_url}
+          srcSet={foodData.image_url}
           loading="lazy"
-          alt=""
+          alt={foodData.name}
         />
       </AspectRatio>
       <CardContent orientation="horizontal">
         <div>
           <Typography level="body-xs">Total price:</Typography>
-          <Typography sx={{ fontSize: 'lg', fontWeight: 'lg' }}>$2,900</Typography>
+          <Typography sx={{ fontSize: 'lg', fontWeight: 'lg' }}>₹ {foodData.price}</Typography>
         </div>
         <Button
           variant="solid"
           size="md"
           color="primary"
-          aria-label="Explore Bahamas Islands"
+          aria-label="Explore"
           sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
+          onClick={handleOpen}
         >
           Explore
         </Button>
       </CardContent>
+
+      {/* Modal for food details */}
+      <BasicModal openModal={open} handleClose={handleClose} foodData={foodData} />
     </Card>
   );
 }

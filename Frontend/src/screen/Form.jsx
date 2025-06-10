@@ -1,9 +1,68 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Form = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { email, password } = formData;
+      console.log(formData)
+      const response = await axios.post("http://localhost:8080/api/login",
+        { "email": email, "password": password },
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+      if (response.status === 200) {
+        localStorage.setItem("user", JSON.stringify(response.data.user))
+        localStorage.setItem("token", response.data.token)
+        console.log("Login Successfully");
+        navigate("/Home")
+      }
+      else {
+        console.log("Error in logging the user", response.data.error.message)
+      }
+    } catch (err) {
+      //if the request fails, the catch block will be executed
+      toast.error(err.response.data.error || err.response.data.errors[0].msg);
+      console.log(err.response.data.error);
+    }
+  }
+
   return (
-    <div className='d-flex justify-content-center align-items-center' style={{height:"100vh"}}>
+    <div className='d-flex justify-content-center align-items-center' style={{ height: "100vh" }}>
+      {/* <ToastContainer
+        position="top-center"
+        hideProgressBar={true}
+        autoClose={5000} // Optional: Adjust auto-close duration (in ms)
+        newestOnTop={true}
+        closeButton={true} // Optional: Hide close button
+        pauseOnHover={false} // Optional: Disable pause on hover
+        draggable={false} // Optional: Disable drag
+      /> */}
       <StyledWrapper>
         <div className="card ">
           <input defaultValue className="blind-check" type="checkbox" id="blind-input" name="blindcheck" hidden />
@@ -11,16 +70,15 @@ const Form = () => {
             <span className="hide">Hide</span>
             <span className="show">Show</span>
           </label>
-          <form className="form">
-            <div className="">Login</div>
+          <form className="form" onSubmit={handleSubmit}>
+            <h1 className="text-center">Welcome Back Foodies</h1>
             <label className="label_input" htmlFor="email-input">Email</label>
-            <input spellCheck="false" className="input" type="email" name="email" id="email-input" />
+            <input spellCheck="false" className="input" type="email" name="email" id="email-input" onChange={(e) => handleChange(e)} />
             <div className="frg_pss">
               <label className="label_input" htmlFor="password-input">Password</label>
-              <a href>Forgot password?</a>
             </div>
-            <input spellCheck="false" className="input" type="text" name="password" id="password-input" />
-            <button className="submit" type="button">Submit</button>
+            <input spellCheck="false" className="input" type="text" name="password" id="password-input" onChange={(e) => handleChange(e)} />
+            <button className="submit" type="submit">Submit</button>
           </form>
           <label htmlFor="blind-input" className="avatar">
             <svg xmlns="http://www.w3.org/2000/svg" width={35} height={35} viewBox="0 0 64 64" id="monkey">

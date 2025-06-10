@@ -7,17 +7,27 @@ import {
 import Home from './screen/Home';
 
 import Form from "./screen/Form";
+import Signup from "./screen/Signup";
+import { CartProvider } from "./components/CartProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
 
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="/Form" element={<Form></Form>}></Route>
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div>
+          <ToastContainer position="top-center" hideProgressBar autoClose={5000} />
+          <Routes>
+            <Route exact path="/Home" element={<Home />}></Route>
+            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/Login" element={<Form></Form>}></Route>
+            <Route exact path="/Signup" element={<Signup></Signup>}></Route>
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   )
 }
 

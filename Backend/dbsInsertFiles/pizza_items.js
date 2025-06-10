@@ -14,7 +14,7 @@ const data = [
             "Mozzarella",
             "Basil"
         ],
-        "image_url": "https://example.com/images/pizza_1.jpg"
+        "image_url": "https://images.pexels.com/photos/4109134/pexels-photo-4109134.jpeg"
     },
     {
         "name": "Pepperoni Feast",
@@ -31,7 +31,7 @@ const data = [
             "Mozzarella",
             "Pepperoni"
         ],
-        "image_url": "https://example.com/images/pizza_2.jpg"
+        "image_url": "https://images.pexels.com/photos/2271196/pexels-photo-2271196.jpeg"
     },
     {
         "name": "BBQ Chicken",
@@ -49,7 +49,7 @@ const data = [
             "Onions",
             "Mozzarella"
         ],
-        "image_url": "https://example.com/images/pizza_3.jpg"
+        "image_url": "https://images.pexels.com/photos/29839587/pexels-photo-29839587.jpeg"
     },
     {
         "name": "Veggie Supreme",
@@ -68,7 +68,7 @@ const data = [
             "Olives",
             "Mushrooms"
         ],
-        "image_url": "https://example.com/images/pizza_4.jpg"
+        "image_url": "https://images.pexels.com/photos/4109128/pexels-photo-4109128.jpeg"
     },
     {
         "name": "Custom Pizza 5",
@@ -85,7 +85,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 5"
         ],
-        "image_url": "https://example.com/images/pizza_5.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 6",
@@ -102,7 +102,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 6"
         ],
-        "image_url": "https://example.com/images/pizza_6.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 7",
@@ -119,7 +119,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 7"
         ],
-        "image_url": "https://example.com/images/pizza_7.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 8",
@@ -136,7 +136,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 8"
         ],
-        "image_url": "https://example.com/images/pizza_8.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 9",
@@ -153,7 +153,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 9"
         ],
-        "image_url": "https://example.com/images/pizza_9.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 10",
@@ -170,7 +170,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 10"
         ],
-        "image_url": "https://example.com/images/pizza_10.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 11",
@@ -187,7 +187,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 11"
         ],
-        "image_url": "https://example.com/images/pizza_11.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 12",
@@ -204,7 +204,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 12"
         ],
-        "image_url": "https://example.com/images/pizza_12.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 13",
@@ -221,7 +221,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 13"
         ],
-        "image_url": "https://example.com/images/pizza_13.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 14",
@@ -238,7 +238,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 14"
         ],
-        "image_url": "https://example.com/images/pizza_14.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 15",
@@ -255,7 +255,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 15"
         ],
-        "image_url": "https://example.com/images/pizza_15.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 16",
@@ -272,7 +272,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 16"
         ],
-        "image_url": "https://example.com/images/pizza_16.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 17",
@@ -289,7 +289,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 17"
         ],
-        "image_url": "https://example.com/images/pizza_17.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 18",
@@ -306,7 +306,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 18"
         ],
-        "image_url": "https://example.com/images/pizza_18.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 19",
@@ -323,7 +323,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 19"
         ],
-        "image_url": "https://example.com/images/pizza_19.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 20",
@@ -340,7 +340,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 20"
         ],
-        "image_url": "https://example.com/images/pizza_20.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 21",
@@ -357,7 +357,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 21"
         ],
-        "image_url": "https://example.com/images/pizza_21.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 22",
@@ -374,7 +374,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 22"
         ],
-        "image_url": "https://example.com/images/pizza_22.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 23",
@@ -391,7 +391,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 23"
         ],
-        "image_url": "https://example.com/images/pizza_23.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 24",
@@ -408,7 +408,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 24"
         ],
-        "image_url": "https://example.com/images/pizza_24.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 25",
@@ -425,7 +425,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 25"
         ],
-        "image_url": "https://example.com/images/pizza_25.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 26",
@@ -442,7 +442,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 26"
         ],
-        "image_url": "https://example.com/images/pizza_26.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 27",
@@ -459,7 +459,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 27"
         ],
-        "image_url": "https://example.com/images/pizza_27.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 28",
@@ -476,7 +476,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 28"
         ],
-        "image_url": "https://example.com/images/pizza_28.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 29",
@@ -493,7 +493,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 29"
         ],
-        "image_url": "https://example.com/images/pizza_29.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 30",
@@ -510,7 +510,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 30"
         ],
-        "image_url": "https://example.com/images/pizza_30.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 31",
@@ -527,7 +527,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 31"
         ],
-        "image_url": "https://example.com/images/pizza_31.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 32",
@@ -544,7 +544,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 32"
         ],
-        "image_url": "https://example.com/images/pizza_32.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 33",
@@ -561,7 +561,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 33"
         ],
-        "image_url": "https://example.com/images/pizza_33.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 34",
@@ -578,7 +578,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 34"
         ],
-        "image_url": "https://example.com/images/pizza_34.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 35",
@@ -595,7 +595,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 35"
         ],
-        "image_url": "https://example.com/images/pizza_35.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 36",
@@ -612,7 +612,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 36"
         ],
-        "image_url": "https://example.com/images/pizza_36.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 37",
@@ -629,7 +629,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 37"
         ],
-        "image_url": "https://example.com/images/pizza_37.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 38",
@@ -646,7 +646,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 38"
         ],
-        "image_url": "https://example.com/images/pizza_38.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 39",
@@ -663,7 +663,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 39"
         ],
-        "image_url": "https://example.com/images/pizza_39.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 40",
@@ -680,7 +680,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 40"
         ],
-        "image_url": "https://example.com/images/pizza_40.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 41",
@@ -697,7 +697,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 41"
         ],
-        "image_url": "https://example.com/images/pizza_41.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 42",
@@ -714,7 +714,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 42"
         ],
-        "image_url": "https://example.com/images/pizza_42.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 43",
@@ -731,7 +731,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 43"
         ],
-        "image_url": "https://example.com/images/pizza_43.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 44",
@@ -748,7 +748,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 44"
         ],
-        "image_url": "https://example.com/images/pizza_44.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     },
     {
         "name": "Custom Pizza 45",
@@ -765,7 +765,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 45"
         ],
-        "image_url": "https://example.com/images/pizza_45.jpg"
+        "image_url": "https://images.pexels.com/photos/724216/pexels-photo-724216.jpeg"
     },
     {
         "name": "Custom Pizza 46",
@@ -782,7 +782,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 46"
         ],
-        "image_url": "https://example.com/images/pizza_46.jpg"
+        "image_url": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
     },
     {
         "name": "Custom Pizza 47",
@@ -799,7 +799,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 47"
         ],
-        "image_url": "https://example.com/images/pizza_47.jpg"
+        "image_url": "https://images.pexels.com/photos/1435896/pexels-photo-1435896.jpeg"
     },
     {
         "name": "Custom Pizza 48",
@@ -816,7 +816,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 48"
         ],
-        "image_url": "https://example.com/images/pizza_48.jpg"
+        "image_url": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"
     },
     {
         "name": "Custom Pizza 49",
@@ -833,7 +833,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 49"
         ],
-        "image_url": "https://example.com/images/pizza_49.jpg"
+        "image_url": "https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg"
     },
     {
         "name": "Custom Pizza 50",
@@ -850,7 +850,7 @@ const data = [
             "Mozzarella",
             "Special Ingredient 50"
         ],
-        "image_url": "https://example.com/images/pizza_50.jpg"
+        "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
     }
-]
+];
 module.exports = data;

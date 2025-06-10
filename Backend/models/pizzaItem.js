@@ -11,6 +11,10 @@ const pizzaItemSchema = new Schema({
         type:String,
         required:true,
     },
+    price : {
+        type:Number,
+        required:true,
+    },
     category : {
         type:String,
         required:true,
@@ -25,7 +29,7 @@ const pizzaItemSchema = new Schema({
         type:[String],
         required:true,
     },
-    imgUrl :{
+    image_url :{
         type:String,
         required:false
     }
