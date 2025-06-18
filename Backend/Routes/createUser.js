@@ -49,7 +49,7 @@ signup.post("/signup", [
                 process.env.session_secret_key,
                 { expiresIn: '1d' }
             );
-            return res.status(200).json({ success: true, token });
+            return res.status(200).json({ success: true, token,userId: newUser._id });
         } else {
             return res.status(400).json({ success: false, error: "Error saving the user" });
         }
@@ -98,7 +98,7 @@ login.post("/login", [
             { expiresIn: '1d' }
         );
         console.log("token :" , token)
-        return res.status(200).json({ success: true, token });
+        return res.status(200).json({ success: true, token ,userId:user._id});
 
     } catch (e) {
         console.error("Error during login:", e.message);

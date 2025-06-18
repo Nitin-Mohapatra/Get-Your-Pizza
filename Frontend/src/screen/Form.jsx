@@ -37,8 +37,9 @@ const Form = () => {
       );
 
       if (response.status === 200) {
-        localStorage.setItem("user", JSON.stringify(response.data.user))
+        localStorage.setItem("userId", (response.data.userId))
         localStorage.setItem("token", response.data.token)
+        // console.log(response.data.userId) 
         console.log("Login Successfully");
         navigate("/Home")
       }

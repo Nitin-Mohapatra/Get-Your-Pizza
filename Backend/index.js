@@ -20,11 +20,21 @@ app.use("/api", authRoute)
 //requiring routes
 const { signup, login, logout } = require("./Routes/createUser");
 const {createReview , showReview} = require("./Routes/reviews")
+const {razorpayOrder,signVerify} = require('./Routes/razorpayOrder')
+
 app.use("/api",signup)
 app.use("/api",login)
 app.use("/api",loadFoodData)
 app.use("/api",createReview)
 app.use("/api",showReview)
+app.use("/api",razorpayOrder)
+app.use("/api",signVerify)
+
+//Admin Routes
+const { signup: adminSignup, login: adminLogin } = require("./Routes/createAdmin");
+app.use('/admin', adminLogin);
+app.use('/admin', adminSignup);
+
 
 //connecting db
 connectDb()

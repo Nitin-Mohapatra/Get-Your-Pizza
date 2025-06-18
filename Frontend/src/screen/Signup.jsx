@@ -40,8 +40,9 @@ const Signup = () => {
       })
       if(response.status === 200){
         console.log("User Created Successfully")
-        localStorage.setItem("user",JSON.stringify(response.data.user))
-        localStorage.setItem("token",response.data.token) 
+        localStorage.setItem("userId",(response.data.userId))
+        localStorage.setItem("token",response.data.token)
+        // console.log(response.data.userId) 
         console.log("Token",response.data.token)
         navigate("/Home")
       }

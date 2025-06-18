@@ -7,6 +7,8 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 import Carticon from '../components/Carticon'
 import CartModal from './CartModal.jsx'
+import { toast } from 'react-toastify';
+import { useCart, useDispatch } from '../components/CartProvider.jsx';
 
 export default function Home() {
   
@@ -14,8 +16,13 @@ export default function Home() {
   const [categoryData, setCategoryData] = useState([])
   const [loading, setLoading] = useState(false)
   const [cartOpen, setCartOpen] = useState(false)
+  const cart = useCart();
   
   const handleCartOpen = () => {
+     if (cart.length === 0) {
+    toast.info("Your cart is empty!");
+    return;
+    }
     setCartOpen(true)
   }
 

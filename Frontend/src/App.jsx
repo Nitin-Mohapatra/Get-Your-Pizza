@@ -10,6 +10,7 @@ import Form from "./screen/Form";
 import Signup from "./screen/Signup";
 import { CartProvider } from "./components/CartProvider";
 import { ToastContainer } from "react-toastify";
+import Dashboard from "../src/admin/Dashboard"
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
             <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/Login" element={<Form></Form>}></Route>
             <Route exact path="/Signup" element={<Signup></Signup>}></Route>
+
+            {/* Admin Routes */}
+            <Route exact path="/Admin" element={<Dashboard></Dashboard>}></Route>
+
           </Routes>
         </div>
       </Router>
