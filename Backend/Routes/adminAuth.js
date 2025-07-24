@@ -12,7 +12,7 @@ const authenAdmin = (req, res, next) => {
         if (!token) {
             return res.status(401).json({ success: false, message: "Token not found" })
         } else {
-            jwt.verify(token, process.env.session_secret_key, (err, decoded) => {
+            jwt.verify(token, process.env.session_secret_key_ADMIN, (err, decoded) => {
                 if (err) {
                     return res.status(401).json({ success: false, message: "Token is invalid or expired" })
                 } else {

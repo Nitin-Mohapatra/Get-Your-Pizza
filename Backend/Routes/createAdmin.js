@@ -49,7 +49,7 @@ signup.post("/signup", [
                 role: newAdmin.role,
                 isLoggedIn: true,
             },
-            process.env.session_secret_key,
+            process.env.session_secret_key_ADMIN,
             { expiresIn: '1d' }
         );
         console.log("created admin id =", newAdmin._id);
@@ -99,7 +99,7 @@ login.post("/login", [
                 role: admin.role,
                 isLoggedIn: true,
             },
-            process.env.session_secret_key,
+            process.env.session_secret_key_ADMIN,
             { expiresIn: '1d' }
         );
 
