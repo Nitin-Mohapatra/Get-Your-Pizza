@@ -43,6 +43,8 @@ signup.post("/signup", [
 
         const token = jwt.sign(
             {
+                name: newAdmin.name,
+                email: newAdmin.email,
                 adminId: newAdmin._id,
                 role: newAdmin.role,
                 isLoggedIn: true,
@@ -50,8 +52,8 @@ signup.post("/signup", [
             process.env.session_secret_key,
             { expiresIn: '1d' }
         );
-
-        return res.status(200).json({ success: true, token, adminId: newAdmin._id });
+        console.log("created admin id =", newAdmin._id);
+        return res.status(200).json({ success: true, token, adminId: newAdmin._id, adminName: newAdmin.name, email: newAdmin.email });
 
     } catch (e) {
         console.error("Signup Error:", e.message);
@@ -83,14 +85,16 @@ login.post("/login", [
         if (!admin) {
             return res.status(400).json({ success: false, error: "Admin does not exist. Please sign up first." });
         }
-
+        console.log("Admin found:", admin);
         const isMatch = await bcrypt.compare(password, admin.password);
         if (!isMatch) {
             return res.status(400).json({ success: false, error: "Email or Password is incorrect" });
         }
 
         const token = jwt.sign(
-            {
+            {   
+                name: admin.name,
+                email: admin.email,
                 adminId: admin._id,
                 role: admin.role,
                 isLoggedIn: true,
@@ -100,7 +104,7 @@ login.post("/login", [
         );
 
         console.log("Admin ID =", admin._id);
-        return res.status(200).json({ success: true, token, adminId: admin._id });
+        return res.status(200).json({ success: true, token, adminId: admin._id, adminName: admin.name, email: admin.email });
 
     } catch (e) {
         console.error("Login Error:", e.message);

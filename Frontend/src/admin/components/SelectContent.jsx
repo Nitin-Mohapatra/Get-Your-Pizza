@@ -57,6 +57,7 @@ export default function SelectContent() {
       }}
     >
       <ListSubheader sx={{ pt: 0 }}>Production</ListSubheader>
+
       <MenuItem value="">
         <ListItemAvatar>
           <Avatar alt="Sitemark web">
@@ -65,6 +66,7 @@ export default function SelectContent() {
         </ListItemAvatar>
         <ListItemText primary="Sitemark-web" secondary="Web app" />
       </MenuItem>
+
       <MenuItem value={10}>
         <ListItemAvatar>
           <Avatar alt="Sitemark App">
@@ -73,6 +75,7 @@ export default function SelectContent() {
         </ListItemAvatar>
         <ListItemText primary="Sitemark-app" secondary="Mobile application" />
       </MenuItem>
+
       <MenuItem value={20}>
         <ListItemAvatar>
           <Avatar alt="Sitemark Store">
@@ -81,6 +84,7 @@ export default function SelectContent() {
         </ListItemAvatar>
         <ListItemText primary="Sitemark-Store" secondary="Web app" />
       </MenuItem>
+      
       <ListSubheader>Development</ListSubheader>
       <MenuItem value={30}>
         <ListItemAvatar>

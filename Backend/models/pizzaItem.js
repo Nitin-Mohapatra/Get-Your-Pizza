@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const {Schema} = mongoose
 
-const pizzaItemSchema = new Schema({
+const pizzaItemSchemas = new Schema({
     name : {
         type:String,
         required:true,
@@ -18,7 +18,7 @@ const pizzaItemSchema = new Schema({
     category : {
         type:String,
         required:true,
-        enum:['Veg','Non-Veg']
+        enum:['Veg','Non-Veg',"Cheese Burst"]
     },
     size : {
         type:[String],
@@ -34,5 +34,5 @@ const pizzaItemSchema = new Schema({
         required:false
     }
 })
-const pizzaItem = mongoose.model("PizzaItem",pizzaItemSchema)
+const pizzaItem = mongoose.model("PizzaItem",pizzaItemSchemas)
 module.exports = pizzaItem;

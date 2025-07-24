@@ -12,7 +12,8 @@ import { CartProvider } from "./components/CartProvider";
 import { ToastContainer } from "react-toastify";
 import Dashboard from "../src/admin/Dashboard"
 import "react-toastify/dist/ReactToastify.css";
-
+import AdminLoginForm from "./admin/components/AdminLoginForm";
+import AdminSignupForm from "./admin/components/AdminSignupForm";
 function App() {
 
   return (
@@ -28,7 +29,8 @@ function App() {
 
             {/* Admin Routes */}
             <Route exact path="/Admin" element={<Dashboard></Dashboard>}></Route>
-
+            <Route exact path="/Admin/Login" element={<AdminLoginForm/>}></Route>
+            <Route exact path="/Admin/Signup" element={<AdminSignupForm/>}></Route>
           </Routes>
         </div>
       </Router>

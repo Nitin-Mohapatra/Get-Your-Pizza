@@ -1,6 +1,6 @@
 const data = [
     {
-        "name": "Margherita",
+        "name": "Margherit",
         "description": "Classic pizza with tomato sauce, mozzarella, and basil.",
         "price": 199,
         "category": "Veg",
@@ -839,7 +839,7 @@ const data = [
         "name": "Custom Pizza 50",
         "description": "A delicious custom pizza with unique toppings.",
         "price": 450,
-        "category": "Veg",
+        "category": "Cheese Burst",
         "size": [
             "Small",
             "Medium",
@@ -851,6 +851,57 @@ const data = [
             "Special Ingredient 50"
         ],
         "image_url": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg"
+    },
+    {
+        "name": "Classic Cheese Burst",
+        "description": "A delicious Cheese Burst pizza with unique toppings.",
+        "price": 885,
+        "category": "Cheese Burst",
+        "size": [
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "ingredients": [
+            "Tomato Sauce",
+            "Mozzarella",
+            "Special Ingredient 50"
+        ],
+        "image_url": "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg"
+    },
+    {
+        "name": "Dark Classic Cheese Burst",
+        "description": "A delicious Cheese Pizzaaaa.",
+        "price": 805,
+        "category": "Cheese Burst",
+        "size": [
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "ingredients": [
+            "Tomato Sauce",
+            "Mozzarella",
+            "Special Ingredient 50"
+        ],
+        "image_url": "https://cdn.pixabay.com/photo/2016/04/09/09/22/pizza-1317699_1280.jpg"
+    },
+    {
+        "name": "Heavy Classic Cheese Burst",
+        "description": "A delicious Cheese Pizzaaaa.",
+        "price":321,
+        "category": "Cheese Burst",
+        "size": [
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "ingredients": [
+            "Tomato Sauce",
+            "Mozzarella",
+            "Special Ingredient 50"
+        ],
+        "image_url": "https://cdn.pixabay.com/photo/2016/04/09/09/22/pizza-1317699_1280.jpg"
     }
 ];
 module.exports = data;

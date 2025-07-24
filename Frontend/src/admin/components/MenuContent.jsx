@@ -12,12 +12,13 @@ import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import SimpleDialogDemo from "./SimpleDialogDemo";
+import { useState } from 'react';
 
 const mainListItems = [
-  { text: 'Home', icon: <HomeRoundedIcon /> },
-  { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
-  { text: 'Clients', icon: <PeopleRoundedIcon /> },
-  { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
+  { text: 'Menu Management', icon: <AnalyticsRoundedIcon sx={{fontSize:1 , padding:12}}/> },
+  { text: 'User Management', icon: <PeopleRoundedIcon fontSize='small'/> },
+  { text: 'Token Management', icon: <AssignmentRoundedIcon fontSize='small'/> },
 ];
 
 const secondaryListItems = [
@@ -26,20 +27,37 @@ const secondaryListItems = [
   { text: 'Feedback', icon: <HelpRoundedIcon /> },
 ];
 
+
 export default function MenuContent() {
+  const [openDialog, setOpenDialog] = useState(false);
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: 'space-between' }}>
+
       <List dense>
-        {mainListItems.map((item, index) => (
-          <ListItem key={index} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton selected={index === 0}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+
+          <ListItemButton onClick={() => setOpenDialog(true)}>
+              <ListItemIcon><AnalyticsRoundedIcon sx={{fontSize:'2em', color:"grey" , paddingRight:0.5}}/></ListItemIcon>
+              <ListItemText primary={"Menu Management"} />
+          </ListItemButton>
+
+          <ListItemButton >
+              <ListItemIcon><HomeRoundedIcon sx={{fontSize:'2em', color:"grey" , paddingRight:0.5}} /></ListItemIcon>
+              <ListItemText primary={"Orders"} />
+          </ListItemButton>
+
+          <ListItemButton >
+              <ListItemIcon><PeopleRoundedIcon sx={{fontSize:'2em', color:"grey" , paddingRight:0.5}}/> </ListItemIcon>
+              <ListItemText primary={"User Management"} />
+          </ListItemButton>
+
+          <ListItemButton >
+              <ListItemIcon><AssignmentRoundedIcon sx={{fontSize:'2em', color:"grey" , paddingRight:0.5}}/></ListItemIcon>
+              <ListItemText primary={"Token Management"} />
+          </ListItemButton>
       </List>
-      <List dense>
+
+      {/* Secondary Items */}
+      {/* <List dense>
         {secondaryListItems.map((item, index) => (
           <ListItem key={index} disablePadding sx={{ display: 'block' }}>
             <ListItemButton>
@@ -48,7 +66,11 @@ export default function MenuContent() {
             </ListItemButton>
           </ListItem>
         ))}
-      </List>
+      </List> */}
+
+      {/* Dialog PopUP */}
+      <SimpleDialogDemo openPopUp={openDialog} closeDb = {setOpenDialog}/>
+
     </Stack>
   );
 }

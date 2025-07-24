@@ -6,6 +6,7 @@ const port = 8080
 const cors = require('cors')
 const { authRoute } = require("./Routes/auth")
 const loadFoodData = require("./Routes/loadFoodData")
+const path = require('path')
 
 app.use(cors({
     origin: "http://localhost:5173",
@@ -13,9 +14,10 @@ app.use(cors({
 }))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use('/uploads',express.static(path.join(__dirname,'public/uploads')))
 
 //requiring auth route
-app.use("/api", authRoute)
+app.use("/api", authRoute)  
 
 //requiring routes
 const { signup, login, logout } = require("./Routes/createUser");
@@ -32,8 +34,19 @@ app.use("/api",signVerify)
 
 //Admin Routes
 const { signup: adminSignup, login: adminLogin } = require("./Routes/createAdmin");
+const {orderStats} = require("./Routes/OrderStats")
+const {userStats} = require("./Routes/userStats")
+const{menuItemStats} = require("./Routes/menuItemStats")
+const orderData = require("./Routes/OrderData")
+const addItem = require("./Routes/adminAddMenu")
+
 app.use('/admin', adminLogin);
 app.use('/admin', adminSignup);
+app.use('/admin', orderStats);
+app.use('/admin', userStats);
+app.use('/admin', menuItemStats);
+app.use('/admin', orderData);
+app.use('/admin', addItem);
 
 
 //connecting db

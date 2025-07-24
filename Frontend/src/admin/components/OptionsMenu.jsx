@@ -10,12 +10,17 @@ import ListItemIcon, { listItemIconClasses } from '@mui/material/ListItemIcon';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
 import MenuButton from './MenuButton';
+import { useNavigate } from 'react-router-dom';
+import {useTheme } from '@mui/material/styles';
 
 const MenuItem = styled(MuiMenuItem)({
   margin: '2px 0',
 });
 
 export default function OptionsMenu() {
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
+  const navigator = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -53,12 +58,7 @@ export default function OptionsMenu() {
           },
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>Add another account</MenuItem>
-        <MenuItem onClick={handleClose}>Settings</MenuItem>
-        <Divider />
+
         <MenuItem
           onClick={handleClose}
           sx={{
@@ -68,11 +68,23 @@ export default function OptionsMenu() {
             },
           }}
         >
-          <ListItemText>Logout</ListItemText>
+          <button onClick={() => {
+              localStorage.removeItem("LoggedIn");
+              localStorage.removeItem("token");
+              localStorage.removeItem("adminId");
+              navigator('/admin/login');
+            }}  style={{
+              backgroundColor:'transparent',
+              color: 'text.primary',
+              border: 'none',
+              
+            }}>LogOut</button>
+
           <ListItemIcon>
             <LogoutRoundedIcon fontSize="small" />
           </ListItemIcon>
         </MenuItem>
+        
       </Menu>
     </React.Fragment>
   );

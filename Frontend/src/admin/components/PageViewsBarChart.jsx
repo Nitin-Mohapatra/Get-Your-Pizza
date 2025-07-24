@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import axios from "axios";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
@@ -7,38 +9,68 @@ import Stack from '@mui/material/Stack';
 import { BarChart } from '@mui/x-charts/BarChart';
 import { useTheme } from '@mui/material/styles';
 
-export default function PageViewsBarChart() {
+export default function OrderStatsBarChart() {
   const theme = useTheme();
+  const [totalItemCount, setTotalItemCount] = useState(0);
+  const [nonVegItemCount, setNonVegItemCount] = useState(0);
+  const [cheeseBurstItemCount, setCheeseBurstItemCount] = useState(0);
+  const [vegItemCount, setVegItemCount] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/admin/menuItemStats",
+          {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem("token")}`
+            }
+          }
+        );
+        if (response.status === 200) {
+          setTotalItemCount(response.data.totalMenuItem);
+          setNonVegItemCount(response.data.nonVegItemCount);
+          setCheeseBurstItemCount(response.data.cheeseBurstItemCount);
+          setVegItemCount(response.data.vegItemCount);
+        }
+      } catch (e) {
+        console.log('Error in fetching data', e);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //to change bar graph colour
   const colorPalette = [
-    (theme.vars || theme).palette.primary.dark,
-    (theme.vars || theme).palette.primary.main,
-    (theme.vars || theme).palette.primary.light,
+    (theme.vars || theme).palette.success.dark,
+    (theme.vars || theme).palette.success.main,
+    (theme.vars || theme).palette.success.light,
   ];
+
+  const orderData = {
+    days: ['Non-Veg', 'Cheese Burst', 'Veg'],
+    orders: [nonVegItemCount, cheeseBurstItemCount, vegItemCount],
+  };
 
   return (
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Page views and downloads
+          Total Menu Items
         </Typography>
-        <Stack sx={{ justifyContent: 'space-between' }}>
-          <Stack
-            direction="row"
-            sx={{
-              alignContent: { xs: 'center', sm: 'flex-start' },
-              alignItems: 'center',
-              gap: 1,
-            }}
-          >
+
+        <Stack sx={{ justifyContent: 'space-between', mb: 1 }}>
+          <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
             <Typography variant="h4" component="p">
-              1.3M
+              {totalItemCount}
             </Typography>
-            <Chip size="small" color="error" label="-8%" />
+            {/* <Chip size="small" color="success" label="+12%" /> */}
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Page views and downloads for the last 6 months
+            Item Count Breakdown
           </Typography>
         </Stack>
+
         <BarChart
           borderRadius={8}
           colors={colorPalette}
@@ -46,28 +78,16 @@ export default function PageViewsBarChart() {
             {
               scaleType: 'band',
               categoryGapRatio: 0.5,
-              data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+              data: orderData.days,
               height: 24,
             },
           ]}
           yAxis={[{ width: 50 }]}
           series={[
             {
-              id: 'page-views',
-              label: 'Page views',
-              data: [2234, 3872, 2998, 4125, 3357, 2789, 2998],
-              stack: 'A',
-            },
-            {
-              id: 'downloads',
-              label: 'Downloads',
-              data: [3098, 4215, 2384, 2101, 4752, 3593, 2384],
-              stack: 'A',
-            },
-            {
-              id: 'conversions',
-              label: 'Conversions',
-              data: [4051, 2275, 3129, 4693, 3904, 2038, 2275],
+              id: 'orders',
+              label: 'Item Category',
+              data: orderData.orders,
               stack: 'A',
             },
           ]}
@@ -75,7 +95,20 @@ export default function PageViewsBarChart() {
           margin={{ left: 0, right: 0, top: 20, bottom: 0 }}
           grid={{ horizontal: true }}
           hideLegend
+          slotProps={{
+            tooltip: {
+              sx: {
+                '& .MuiChartsTooltip-tooltip': {
+                  color: 'white', // Text color
+                  backgroundColor: theme.palette.success.main, // Background color
+                  borderRadius: '6px',
+                  fontWeight: 'bold',
+                },
+              },
+            },
+          }}
         />
+
       </CardContent>
     </Card>
   );

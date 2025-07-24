@@ -11,8 +11,12 @@ import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import MenuButton from './MenuButton';
 import MenuContent from './MenuContent';
 import CardAlert from './CardAlert';
+import AdminInfo from './AdminInfo';
+import { useNavigate } from 'react-router-dom';
 
 function SideMenuMobile({ open, toggleDrawer }) {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem("LoggedIn") === "true");
+  const navigator = useNavigate();
   return (
     <Drawer
       anchor="right"
@@ -26,43 +30,50 @@ function SideMenuMobile({ open, toggleDrawer }) {
         },
       }}
     >
-      <Stack
-        sx={{
-          maxWidth: '70dvw',
-          height: '100%',
-        }}
-      >
-        <Stack direction="row" sx={{ p: 2, pb: 0, gap: 1 }}>
-          <Stack
-            direction="row"
-            sx={{ gap: 1, alignItems: 'center', flexGrow: 1, p: 1 }}
-          >
-            <Avatar
-              sizes="small"
-              alt="Riley Carter"
-              src="/static/images/avatar/7.jpg"
-              sx={{ width: 24, height: 24 }}
-            />
-            <Typography component="p" variant="h6">
-              Riley Carter
-            </Typography>
+
+      {isLoggedIn && (
+        <Stack
+          sx={{
+            maxWidth: '70dvw',
+            height: '100%',
+          }}
+        >
+          <Stack direction="row" sx={{ p: 2, pb: 0, gap: 1 }}>
+            <Stack
+              direction="row"
+              sx={{ gap: 1, alignItems: 'center', flexGrow: 1, p: 1 }}
+            >
+             
+              <Typography component="p" variant="h6">
+                {localStorage.getItem("adminName")}
+              </Typography>
+            </Stack>
+            
           </Stack>
-          <MenuButton showBadge>
-            <NotificationsRoundedIcon />
-          </MenuButton>
-        </Stack>
-        <Divider />
-        <Stack sx={{ flexGrow: 1 }}>
-          <MenuContent />
           <Divider />
-        </Stack>
-        <CardAlert />
-        <Stack sx={{ p: 2 }}>
-          <Button variant="outlined" fullWidth startIcon={<LogoutRoundedIcon />}>
-            Logout
-          </Button>
-        </Stack>
-      </Stack>
+          <Stack sx={{ flexGrow: 1 }}>
+            <MenuContent />
+            <Divider />
+          </Stack>
+          
+          {/* <CardAlert /> */}
+          <Stack sx={{ p: 2 }}>
+            <Button variant="outlined" fullWidth startIcon={<LogoutRoundedIcon />} onClick={() => {
+              localStorage.removeItem("LoggedIn");
+              localStorage.removeItem("token");
+              localStorage.removeItem("adminId");
+              setIsLoggedIn(false);
+              navigator('/admin/login');
+
+            }}>
+              Logout
+            </Button>
+          </Stack>
+        </Stack>  
+      )}
+
+
+
     </Drawer>
   );
 }

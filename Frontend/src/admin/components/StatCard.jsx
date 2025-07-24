@@ -10,21 +10,6 @@ import Typography from '@mui/material/Typography';
 import { SparkLineChart } from '@mui/x-charts/SparkLineChart';
 import { areaElementClasses } from '@mui/x-charts/LineChart';
 
-function getDaysInMonth(month, year) {
-  const date = new Date(year, month, 0);
-  const monthName = date.toLocaleDateString('en-US', {
-    month: 'short',
-  });
-  const daysInMonth = date.getDate();
-  const days = [];
-  let i = 1;
-  while (days.length < daysInMonth) {
-    days.push(`${monthName} ${i}`);
-    i += 1;
-  }
-  return days;
-}
-
 function AreaGradient({ color, id }) {
   return (
     <defs>
@@ -41,23 +26,13 @@ AreaGradient.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-function StatCard({ title, value, interval, trend, data }) {
+function StatCard({ title, value, interval, trend, data, labels , trendDataPercent }) {
   const theme = useTheme();
-  const daysInWeek = getDaysInMonth(4, 2024);
 
   const trendColors = {
-    up:
-      theme.palette.mode === 'light'
-        ? theme.palette.success.main
-        : theme.palette.success.dark,
-    down:
-      theme.palette.mode === 'light'
-        ? theme.palette.error.main
-        : theme.palette.error.dark,
-    neutral:
-      theme.palette.mode === 'light'
-        ? theme.palette.grey[400]
-        : theme.palette.grey[700],
+    up: theme.palette.success.main,
+    down: theme.palette.error.main,
+    neutral: theme.palette.grey[400],
   };
 
   const labelColors = {
@@ -66,9 +41,17 @@ function StatCard({ title, value, interval, trend, data }) {
     neutral: 'default',
   };
 
+  console.log("Lavel = ",labels)
+  const daysInWeek = Array.isArray(labels) && labels.length === data.length
+    ? labels
+    : data.map((_, i) => `Day ${i + 1}`);
+
+
+  // const daysInWeek = Array.to
+
   const color = labelColors[trend];
   const chartColor = trendColors[trend];
-  const trendValues = { up: '+25%', down: '-25%', neutral: '+5%' };
+  const trendValues = { up: `${trendDataPercent}+`, down: trendDataPercent, neutral: '+5%' };
 
   return (
     <Card variant="outlined" sx={{ height: '100%', flexGrow: 1 }}>
@@ -76,15 +59,9 @@ function StatCard({ title, value, interval, trend, data }) {
         <Typography component="h2" variant="subtitle2" gutterBottom>
           {title}
         </Typography>
-        <Stack
-          direction="column"
-          sx={{ justifyContent: 'space-between', flexGrow: '1', gap: 1 }}
-        >
+        <Stack direction="column" sx={{ justifyContent: 'space-between', flexGrow: '1', gap: 1 }}>
           <Stack sx={{ justifyContent: 'space-between' }}>
-            <Stack
-              direction="row"
-              sx={{ justifyContent: 'space-between', alignItems: 'center' }}
-            >
+            <Stack direction="row" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography variant="h4" component="p">
                 {value}
               </Typography>
@@ -103,7 +80,7 @@ function StatCard({ title, value, interval, trend, data }) {
               showTooltip
               xAxis={{
                 scaleType: 'band',
-                data: daysInWeek, // Use the correct property 'data' for xAxis
+                data: daysInWeek,
               }}
               sx={{
                 [`& .${areaElementClasses.root}`]: {
@@ -121,11 +98,13 @@ function StatCard({ title, value, interval, trend, data }) {
 }
 
 StatCard.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.number).isRequired,
-  interval: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  trend: PropTypes.oneOf(['down', 'neutral', 'up']).isRequired,
   value: PropTypes.string.isRequired,
+  interval: PropTypes.string.isRequired,
+  trend: PropTypes.oneOf(['up', 'down', 'neutral']).isRequired,
+  data: PropTypes.arrayOf(PropTypes.number).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.string), // ✅ added
+  trendDataPercent:PropTypes.string
 };
 
 export default StatCard;

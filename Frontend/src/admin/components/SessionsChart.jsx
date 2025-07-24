@@ -7,6 +7,8 @@ import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { LineChart } from '@mui/x-charts/LineChart';
+import axios from "axios";
+import { useEffect, useState } from 'react';
 
 function AreaGradient({ color, id }) {
   return (
@@ -53,7 +55,7 @@ export default function SessionsChart() {
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Sessions
+          Total Menu Items
         </Typography>
         <Stack sx={{ justifyContent: 'space-between' }}>
           <Stack

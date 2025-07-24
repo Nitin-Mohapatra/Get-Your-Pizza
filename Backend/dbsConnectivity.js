@@ -22,7 +22,13 @@ const connectDb = () => {
             const model = await pizzaCategory.create(categoryData)
             console.log("Category insertation successfull")
         }
+        //Bulk Deletion
+        const deleteItm = async () =>{
+            const deleteItem = await pizzaItem.deleteMany({})
+            console.log("deletion successfull")
+        }
 
+        // deleteItm()
         // insertPizzas()
         // insertCat()
     })

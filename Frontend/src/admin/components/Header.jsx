@@ -23,12 +23,17 @@ export default function Header() {
       spacing={2}
     >
       <NavbarBreadcrumbs />
+
       <Stack direction="row" sx={{ gap: 1 }}>
-        <Search />
-        <CustomDatePicker />
-        <MenuButton showBadge aria-label="Open notifications">
+        {/* <Search /> */}
+
+        {/* <CustomDatePicker /> */}
+
+        {/* Notification badge */}
+        {/* <MenuButton showBadge aria-label="Open notifications">
           <NotificationsRoundedIcon />
-        </MenuButton>
+        </MenuButton> */}
+
         <ColorModeIconDropdown />
       </Stack>
     </Stack>

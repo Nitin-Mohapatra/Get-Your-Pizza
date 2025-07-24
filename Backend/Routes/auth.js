@@ -8,7 +8,7 @@ const authen = (req, res, next) => {
         return res.status(401).json({ success: false, message: "Authorization header not found" })
     } else {
         const token = req.headers['authorization'].split(' ')[1]; // Extract token from the Authorization header
-        console.log(token)
+        // console.log(token)
         if (!token) {
             return res.status(401).json({ success: false, message: "Token not found" })
         } else {
@@ -40,4 +40,5 @@ authRoute.get("/me",(req, res) => {
         });
     }
 });
+
 module.exports = {authen, authRoute};

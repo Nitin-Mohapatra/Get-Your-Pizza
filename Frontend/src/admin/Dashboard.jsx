@@ -1,3 +1,4 @@
+// Dashboard.jsx
 import * as React from 'react';
 import { alpha } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,6 +9,7 @@ import Header from './components/Header';
 import MainGrid from './components/MainGrid';
 import SideMenu from './components/SideMenu';
 import AppTheme from './shared-theme/AppTheme';
+import Overlay from './components/Overlay';
 import {
   chartsCustomizations,
   dataGridCustomizations,
@@ -23,13 +25,22 @@ const xThemeComponents = {
 };
 
 export default function Dashboard(props) {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  // ✅ Check login status only once on initial mount
+  React.useEffect(() => {
+    const status = localStorage.getItem("LoggedIn") === "true";
+    setIsLoggedIn(status);
+  }, []);
+
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
+
       <Box sx={{ display: 'flex' }}>
         <SideMenu />
         <AppNavbar />
-        {/* Main content */}
+
         <Box
           component="main"
           sx={(theme) => ({
@@ -54,6 +65,10 @@ export default function Dashboard(props) {
           </Stack>
         </Box>
       </Box>
+
+      {!isLoggedIn && (
+        <Overlay />
+      )}
     </AppTheme>
   );
 }

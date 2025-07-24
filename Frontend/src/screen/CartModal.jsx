@@ -13,6 +13,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useCart, useDispatch } from '../components/CartProvider';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import eventEmitter from "../utils/eventBus"
+
 
 const modalStyle = {
   position: 'absolute',
@@ -30,6 +32,7 @@ const modalStyle = {
 };
 
 export default function CartModal({ open, handleClose }) {
+
   const cart = useCart();
   const dispatch = useDispatch();
   const user_id = localStorage.getItem("userId");
@@ -112,6 +115,7 @@ export default function CartModal({ open, handleClose }) {
                 });
 
               if (signVerifyRes.status === 200) {
+                localStorage.setItem("newOrder", Date.now()); // set a timestamp
                 toast.success("Payment Verified & Saved!");
               }
 
